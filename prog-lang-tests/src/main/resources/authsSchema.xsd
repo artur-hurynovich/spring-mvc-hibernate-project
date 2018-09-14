@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns = "http://www.w3.org/2001/XMLSchema" 
+	targetNamespace = "http://www.hurynovich.com/authsSchema" 
+	xmlns:tns = "http://www.hurynovich.com/authsSchema">
+	<element name = "auth-uris">
+    	<complexType>
+    		<sequence>
+    			<element name = "auth-uri" type = "string" minOccurs = "1" maxOccurs = "unbounded" />
+    		</sequence>
+    	</complexType>
+    </element>
+</schema>

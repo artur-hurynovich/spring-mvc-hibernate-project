@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:auth-uris xmlns:tns = "http://www.hurynovich.com/authsSchema" 
+	xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation = "http://www.hurynovich.com/authsSchema authsSchema.xsd ">
+	<auth-uri>/prog-lang-tests/new_lang</auth-uri>
+	<auth-uri>/prog-lang-tests/new_test</auth-uri>
+</tns:auth-uris>

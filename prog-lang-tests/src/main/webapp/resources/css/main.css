@@ -1,0 +1,15 @@
+.error {
+	color: #ff0000;
+}
+
+.outer-div {
+	margin: 10px;
+}
+
+.navbar-custom {
+    background-color: #2c3571;
+}
+
+.navbar-custom .nav > li > a {
+    color: #ffffff;
+}
