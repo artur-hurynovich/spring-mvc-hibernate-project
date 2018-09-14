@@ -1,0 +1,44 @@
+CREATE DATABASE prog_lang_tests_db;
+USE prog_lang_tests_db;
+
+CREATE TABLE users(
+user_id INT AUTO_INCREMENT NOT NULL,
+user_name VARCHAR (50) NOT NULL,
+user_email VARCHAR (50) NOT NULL,
+user_password VARCHAR (30) NOT NULL,
+user_role ENUM ('USER', 'ADMIN') NOT NULL,
+PRIMARY KEY (user_id));
+
+INSERT INTO users (user_name, user_email, user_password, user_role) 
+VALUES ('Artur Hurynovich',
+'artur.hurynovich@gmail.com',
+'admin',
+'ADMIN');
+
+CREATE TABLE langs(
+lang_id INT AUTO_INCREMENT NOT NULL,
+lang_name VARCHAR (20) NOT NULL,
+PRIMARY KEY (lang_id));
+
+CREATE TABLE tests(
+test_id INT AUTO_INCREMENT NOT NULL,
+test_name VARCHAR (255) NOT NULL,
+test_difficulty ENUM ("EASY", "MEDIUM", "HARD") NOT NULL,
+lang_id INT NOT NULL,
+PRIMARY KEY (test_id),
+FOREIGN KEY (lang_id) REFERENCES langs(lang_id) ON DELETE CASCADE);
+
+CREATE TABLE questions(
+question_id INT AUTO_INCREMENT NOT NULL,
+question_text VARCHAR (255) NOT NULL,
+test_id INT NOT NULL,
+PRIMARY KEY (question_id),
+FOREIGN KEY (test_id) REFERENCES tests(test_id) ON DELETE CASCADE);
+
+CREATE TABLE answers(
+answer_id INT AUTO_INCREMENT NOT NULL,
+answer_text VARCHAR (255) NOT NULL,
+answer_correct BOOLEAN NOT NULL,
+question_id INT NOT NULL,
+PRIMARY KEY (answer_id),
+FOREIGN KEY (question_id) REFERENCES questions(question_id) ON DELETE CASCADE);
